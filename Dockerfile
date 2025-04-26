@@ -21,4 +21,4 @@ RUN poetry install --only main --no-root
 COPY pikaraoke ./pikaraoke
 RUN poetry install
 
-ENTRYPOINT ["poetry", "run", "pikaraoke", "-d", "/app/pikaraoke-songs/", "--headless"]
+ENTRYPOINT ["sh", "./docker/entrypoint.sh"]
