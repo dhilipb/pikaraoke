@@ -17,6 +17,9 @@ COPY docs ./docs
 # Only install main dependencies for better docker caching
 RUN poetry install --only main --no-root
 
+COPY docker/entrypoint.sh ./
+RUN chmod +x entrypoint.sh
+
 # Copy the rest of the files and install the remaining deps in a separate layer
 COPY pikaraoke ./pikaraoke
 RUN poetry install
