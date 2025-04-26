@@ -24,4 +24,4 @@ RUN chmod +x entrypoint.sh
 COPY pikaraoke ./pikaraoke
 RUN poetry install
 
-ENTRYPOINT ["sh", "./docker/entrypoint.sh"]
+ENTRYPOINT ["./entrypoint.sh"]
