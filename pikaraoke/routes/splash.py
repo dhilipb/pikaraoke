@@ -12,6 +12,10 @@ _ = flask_babel.gettext
 splash_bp = Blueprint("splash", __name__)
 
 
+@splash_bp.route("/tv")
+def redirect_tv():
+    return redirect(url_for("splash.splash"))
+
 @splash_bp.route("/splash")
 def splash():
     k = get_karaoke_instance()
